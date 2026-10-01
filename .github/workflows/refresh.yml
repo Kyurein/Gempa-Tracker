@@ -1,0 +1,16 @@
+# Optional: wakes the backend and triggers a BMKG fetch every 15 minutes.
+# Useful when a free-tier host sleeps and its cron job stops running.
+# Add API_URL and REFRESH_SECRET under Settings > Secrets and variables > Actions.
+name: Refresh earthquakes
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -fsS -X POST "${{ secrets.API_URL }}/api/refresh" \
+            -H "x-refresh-secret: ${{ secrets.REFRESH_SECRET }}" \
+            --retry 3 --retry-delay 20 --max-time 90
