@@ -1,10 +1,11 @@
-# Gempa Tracker
+<img width="2602" height="1604" alt="image" src="https://github.com/user-attachments/assets/40011a6f-73de-4221-8c56-767ebce2ae44" /># Gempa Tracker
 
 A fullstack web app that tracks earthquakes in Indonesia. The backend pulls BMKG's open earthquake feeds every 5 minutes and stores each new earthquake in PostgreSQL, building a history that goes beyond the 15 most recent events BMKG publishes. The frontend shows them on an interactive map with a filterable list and a detail view.
 
-**Live demo:** _add your link here_
+**Live demo:** https://gempa-tracker-ten.vercel.app
 
-![Screenshot](docs/screenshot.png)
+<img width="2602" height="1604" alt="image" src="https://github.com/user-attachments/assets/7c7e08c3-9ed3-452a-bdd5-d5c80cd51941" />
+
 
 ## Features
 
