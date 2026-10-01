@@ -1,10 +1,10 @@
-# Optional: wakes the backend and triggers a BMKG fetch every 15 minutes.
-# Useful when a free-tier host sleeps and its cron job stops running.
+# Fetches new earthquakes from BMKG every 10 minutes by calling the backend.
+# Needed because the Vercel-hosted backend can't run its own cron job.
 # Add API_URL and REFRESH_SECRET under Settings > Secrets and variables > Actions.
 name: Refresh earthquakes
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/10 * * * *"
   workflow_dispatch:
 jobs:
   refresh:

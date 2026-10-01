@@ -1,3 +1,5 @@
+// Tables are created automatically on first run (see initDb in db.js).
+export const SCHEMA_SQL = `
 CREATE TABLE IF NOT EXISTS earthquakes (
   id                SERIAL PRIMARY KEY,
   occurred_at       TIMESTAMPTZ NOT NULL UNIQUE,
@@ -33,3 +35,4 @@ CREATE TABLE IF NOT EXISTS watched_locations (
 );
 
 CREATE INDEX IF NOT EXISTS idx_watched_locations_user ON watched_locations (user_id);
+`;
